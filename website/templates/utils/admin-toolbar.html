@@ -1,0 +1,10 @@
+
+{%if user.is_superuser%}
+  <div class="float-right h-100">
+
+  {%if travel%}
+  <div class="d-inline align-middle"><a class="btn btn-info" role="button" href="/admin/website/travel/{{travel.id}}/change/"><i class="fa fa-pencil"></i></a></div>
+  {%endif%}
+  <div class="d-inline align-middle"><a class="btn btn-info" role="button" href="/admin/website/travel/add/"><i class="fa fa-plus"></i></a></div>
+</div>
+{%endif%}

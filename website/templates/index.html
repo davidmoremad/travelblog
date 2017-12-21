@@ -1,0 +1,38 @@
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+
+<p class="display-4">Encuentra algo cerca y visítalo...</p>
+<div style="height:340px; width:100%; display:inline-block; overflow:hidden; margin-bottom:-50px;">
+ <iframe style="position:relative;top:-51px; border:none;" src="https://www.google.es/maps/d/embed?mid=1N8qJ6NL33lG22qXl1zQmcEr_0o0K7Qeu" width="100%" height="340px"></iframe>
+</div>
+
+<hr>
+
+<h3 class="text-right text-muted mb-3">...o planifica <u>tu próximo viaje</u>:</h3>
+<div class="card-deck row">
+  {% for travel in travels %}
+  <div class="col-md-4 mb-3">
+    <div class="card w-100"  style="width: 300px;">
+      <img class="card-img-top" style="height:200px;background-image: url('{% static 'img/travel/' %}{{travel.date|date:'Y_m_d'}}_{{travel.title}}/banner.jpg');background-size: cover;">
+      <div class="card-block">
+        <h4 class="card-title"><a href="{% url 'website:travel_detail' pk=travel.pk %}">{{travel.title}}</a></h4>
+        <p class="card-text">{{travel.text|striptags|truncatechars:120|safe}}</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">
+          <i class="fa fa-usd"></i> {{travel.price}}
+        </small>
+        <small class="text-muted float-right">
+          <i class="fa fa-star"></i> {{travel.score}}
+        </small>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock%}

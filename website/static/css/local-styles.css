@@ -1,0 +1,109 @@
+
+.bg-violet {
+  background-color: rgb(85, 44, 84) !important;
+}
+.bg-violet-light {
+  background-color:rgb(218, 199, 217) !important;
+}
+
+.bg-marine {
+  background-color:rgb(55, 140, 138) !important;
+}
+.bg-marine-light {
+  background-color:rgb(194, 227, 230) !important;
+}
+
+.bg-blue {
+  background-color:rgb(71, 98, 131) !important;
+}
+.bg-blue-light {
+  background-color:rgb(167, 187, 209) !important;
+}
+
+.bg-green {
+  background-color:rgb(38, 150, 59) !important;
+}
+.bg-green-light {
+  background-color:rgb(203, 224, 173) !important;
+}
+
+.bg-orange {
+  background-color:rgb(208, 99, 14) !important;
+}
+.bg-orange-light {
+  background-color:rgb(241, 216, 182) !important;
+}
+
+.bg-red {
+  background-color:rgb(167, 36, 36) !important;
+}
+.bg-red-light {
+  background-color:rgb(230, 194, 194) !important;
+}
+
+/*
+Sticky footer styles (bootstrap 4)
+https://v4-alpha.getbootstrap.com/examples/sticky-footer-navbar/
+*/
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 15%;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #1c1c1c;
+  border-top: 10px solid rgba(101, 101, 101, 0.81);
+}
+
+
+/*
+Make bootstrap-select work with bootstrap 4 see:
+https://github.com/silviomoreto/bootstrap-select/issues/1135
+*/
+.dropdown-toggle.btn-default {
+  color: #292b2c;
+  background-color: #fff;
+  border-color: #ccc;
+}
+.bootstrap-select ul li a{
+    outline: none !important;
+}
+.bootstrap-select.show > .dropdown-menu > .dropdown-menu,
+.bootstrap-select > .dropdown-menu > .dropdown-menu li.hidden {
+  display: block;
+}
+.bootstrap-select > .dropdown-menu > .dropdown-menu li a {
+  display: block;
+  width: 100%;
+  padding: 3px 1.5rem;
+  clear: both;
+  font-weight: 400;
+  color: #292b2c;
+  text-align: inherit;
+  white-space: nowrap;
+  background: 0 0;
+  border: 0;
+  text-decoration: none;
+}
+.bootstrap-select > .dropdown-menu > .dropdown-menu li a:hover {
+  background-color: #f4f4f4;
+}
+.dropdown-menu > li.active > a {
+  color: #fff !important;
+  background-color: #337ab7 !important;
+}
+.bootstrap-select .check-mark {
+  line-height: 14px;
+}
+.bootstrap-select .check-mark::after {
+  font-family: "FontAwesome";
+  content: "\f00c";
+}

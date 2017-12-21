@@ -1,0 +1,117 @@
+
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+{% load customtags %}
+
+{% block content %}
+<link href="{% static 'css/lightbox.css' %}" rel="stylesheet">
+<style media="screen">
+  .carousel-inner .carousel-item-right.active,
+  .carousel-inner .carousel-item-next {
+  transform: translateX(25%);
+  }
+  .carousel-inner .carousel-item-left.active,
+  .carousel-inner .carousel-item-prev {
+  transform: translateX(-25%)
+  }
+  .carousel-inner .carousel-item-right,
+  .carousel-inner .carousel-item-left{
+  transform: translateX(0);
+  }
+</style>
+
+<div class="row">
+  <div class="col-md-12 mb-4">
+
+    <h1 class="display-4">{{travel.title}}{% include 'utils/admin-toolbar.html' %}</h1><hr>
+
+    <!-- MOBILE BASIC INFO -->
+    <ul class="hidden-md-up nav nav-pills nav-fill bg-faded">
+        <li class="nav-item bg-{{travel.price|price_color}}"><span class="nav-link border border-primary"><i class="fa fa-usd"></i> {{travel.price}} €</span></li>
+        <li class="nav-item bg-{{travel.score|score_color}}"><span class="nav-link"><i class="fa fa-star"></i> {{travel.score}} /10</span></li>
+        <li class="nav-item"><span class="nav-link"><i class="fa fa-snowflake-o"></i> {{travel.season|title}}</span></li>
+    </ul>
+
+    <!-- CAROUSEL OF PICTURES -->
+    <div id="recipeCarousel" class="carousel slide w-100 " data-ride="carousel">
+      <div class="carousel-inner" role="listbox">
+        {%for image in travel.images%}
+          <a href="{%static image%}" data-lightbox="roadtrip" data-title="{{travel.title}}" class="carousel-item {%if forloop.counter0 == 0 %}active{%endif%}">
+              <span class="col-md-3 m-1" style="height:200px;background-image: url('{%static image%}');background-size: cover;border:none"></span></a>
+        {%endfor%}
+      </div>
+      <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#recipeCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- GOOGLE MAP -->
+  <div class="col-md-9">
+    <div style="height:340px; width:100%; display:inline-block; overflow:hidden; margin-bottom:-50px">
+     <iframe style="position:relative;top:-51px; border:none;" src="{{travel.geo|safe}}" width="100%" height="340px"></iframe>
+    </div>
+    <small class="float-right text-muted font-italic" style="position:relative">Ver en <a target="_blank" href="{{travel.geo|safe}}">Google Maps</a></small>
+    <p>{{travel.text|safe}}</p>
+  </div>
+
+  <!-- DESKTOP BASIC INFO -->
+  <div class="col-md-3 hidden-md-down">
+    <ul class="list-group">
+      <li class="list-group-item h5 text-{{travel.price|price_color}}">
+        <div class="col-md-2 text-center"><i class="fa fa-usd"></i></div>
+        <div class="col-md-10 text-right"> {{travel.price}} €</div>
+      </li>
+      <li class="list-group-item h5 text-{{travel.score|score_color}}">
+        <div class="col-md-2 text-center"><i class="fa fa-star"></i></div>
+        <div class="col-md-10 text-right"> {{travel.score}} / 10</div>
+      </li>
+      <li class="list-group-item h5">
+        <div class="col-md-2 text-center"><i class="fa fa-map-marker"></i></div>
+        <div class="col-md-10 text-right"> {{travel.country.name}}</div>
+      </li>
+      <li class="list-group-item h5">
+        <div class="col-md-2 text-center"><i class="fa fa-snowflake-o"></i></div>
+        <div class="col-md-10 text-right"> {{travel.season|title}}</div>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+
+
+<script src="{% static 'js/lightbox.js'%}"></script>
+<script type="text/javascript">
+$('#recipeCarousel').carousel({
+  interval: 2222
+})
+$('.carousel .carousel-item').each(function(){
+    var next = $(this).next();
+    // Return first if it is the last
+    if (!next.length) {
+      next = $(this).siblings(':first');
+    }
+    next.children(':first-child').clone().appendTo($(this));
+    if (next.next().length>0) {
+      next.next().children(':first-child').clone().appendTo($(this));
+    }
+    else {
+      $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+    }
+    if (next.next().next().length>0) {
+      next.next().next().children(':first-child').clone().appendTo($(this));
+    }
+    else {
+      $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+    }
+});
+</script>
+
+{% endblock%}

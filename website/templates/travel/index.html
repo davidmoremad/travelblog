@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load customtags %}
+
+{% block content %}
+
+<p class="display-4">Mis viajes</p> <hr>
+<ul class="list-group mt-2">
+  {% for travel in travels %}
+  <li class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1"><a href="/travel/{{travel.id}}">{{travel.title}}</a>, {{travel.country.name}} </h5>
+        <span class="col-3 text-right">
+          <span style="width:60px" class="p-1 ml-2 badge badge-default badge-{{travel.price|price_color}}"><i class="fa fa-usd fa-lg"></i> {{travel.price}}</span>
+          <span style="width:60px" class="p-1 ml-2 badge badge-default badge-{{travel.score|score_color}}"><i class="fa fa-star fa-lg"></i> {{travel.score}}/10</span>
+        </span>
+      </div>
+  </li>
+  {% endfor %}
+</ul>
+
+{% endblock%}
