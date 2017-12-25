@@ -1,6 +1,7 @@
 
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load customtags %}
 
 {% block content %}
 
@@ -23,12 +24,11 @@
         <p class="card-text">{{travel.text|striptags|truncatechars:120|safe}}</p>
       </div>
       <div class="card-footer">
-        <small class="text-muted">
-          <i class="fa fa-usd"></i> {{travel.price}}
-        </small>
-        <small class="text-muted float-right">
-          <i class="fa fa-star"></i> {{travel.score}}
-        </small>
+        <div class="d-flex justify-content-between">
+          <span class="badge badge-pill badge-default badge-{{travel.score|score_color}}"> <i class="fa fa-star"></i> &nbsp;{{travel.score}}/10</span>
+          <span class="badge badge-pill text-muted"> <i class="fa fa-snowflake-o"></i> &nbsp;{{travel.season|title}}</span>
+          <span class="badge badge-pill badge-default badge-{{travel.price|price_color}}"> <i class="fa fa-usd"></i> &nbsp;{{travel.price}}</span>
+        </div>
       </div>
     </div>
   </div>

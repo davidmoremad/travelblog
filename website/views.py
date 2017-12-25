@@ -20,5 +20,4 @@ def travel_detail(request, pk):
     img_dir = 'img/travel/{date}_{title}/'.format(date=travel.date.strftime('%Y_%m_%d'), title=travel.title)
     if static_storage.exists(img_dir):
         travel.images.extend([img_dir + x for x in static_storage.listdir(img_dir)[1]])
-
     return render(request, 'travel/detail.html', {'travel':travel})

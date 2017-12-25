@@ -66,17 +66,29 @@
     {% endblock %}
   </div>
 
-  <footer class="footer">
+  <div class="hidden-sm-up" style="height:450px"><br></div>
+  <footer class="footer" id="footer">
     <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h5 class="text-white mt-4 mb-4"> <i class="fa fa-instagram text-warning"></i> Last on <b class="text-warning">Instagram</b>!</h5>
-          <iframe src="https://snapwidget.com/embed/485558" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:500px; height:125px"></iframe>
+        <!-- DESKTOP -->
+        <div class="row hidden-md-down">
+          <div class="col-md-6">
+            <h5 class="text-white mt-4 mb-4"> <i class="fa fa-instagram text-warning"></i> Last on <a href="https://www.instagram.com/davidmoremad" target="_blank" class="text-warning">Instagram</a>!</h5>
+            <iframe class="snapwidget-widget hidden-md-down" src="https://snapwidget.com/embed/485558" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:500px; height:125px"></iframe>
+          </div>
+          <div class="col-md-6">
+            <h5 class="text-white mt-4 mb-4"> <i class="fa fa-facebook text-primary"></i> Last on <a href="https://www.facebook.com/davidmoremad" target="_blank" class="text-primary">Facebook</a>!</h5>
+            <iframe class="snapwidget-widget hidden-md-down" src="https://snapwidget.com/embed/485561" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:500px; height:125px"></iframe>
+          </div>
         </div>
-        <div class="col-md-6">
-          <h5 class="text-white mt-4 mb-4"> <i class="fa fa-facebook text-primary"></i> Last on <b class="text-primary">Facebook</b>!</h5>
-<iframe src="https://snapwidget.com/embed/485561" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:500px; height:125px"></iframe>        </div>
-      </div>
+
+        <!-- MOBILE -->
+        <div class="hidden-sm-up">
+            <h4 class="d-flex justify-content-between text-white mt-4 mb-4"> <i class="fa fa-instagram text-warning bg-inverse rounded p-2"></i> <span>Last on <a href="instagram://user?username=davidmoremad" target="_blank" class="text-warning">Instagram</a>!</span></h4>
+            <iframe class="snapwidget-widget" src="https://snapwidget.com/embed/485558" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:350px; height:125px"></iframe>
+            <h4 class="d-flex justify-content-between text-white mt-4 mb-4"> <i class="fa fa-facebook text-primary bg-inverse rounded p-2"></i> <span>Last on <a href="fb://profile/100021733520692" target="_blank" class="text-primary">Facebook</a>!</span></h4>
+            <iframe class="snapwidget-widget hidden-md-up" src="https://snapwidget.com/embed/485561" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:350px; height:125px"></iframe>
+        </div>
+
     </div>
   </footer>
 

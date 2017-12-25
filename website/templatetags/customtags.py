@@ -4,8 +4,8 @@ register = template.Library()
 
 @register.filter
 def price_color(price):
-    if price >= '500': return 'warning'
-    elif price <= '300': return 'success'
+    if price >= 500: return 'warning'
+    elif price <= 300: return 'success'
     else: return None
 
 @register.filter
