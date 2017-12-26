@@ -3,6 +3,11 @@
 {% load staticfiles %}
 {% load customtags %}
 
+{% block meta-title %}Descubre los rincones más bellos de España y Europa{% endblock %}
+{% block meta-description %}Historia de mis viajes por {%for travel in travels%}{{travel.title}}, {%endfor%}{% endblock %}
+{% block meta-image %}http://www.choosetravel.es/static/img/travel/2016_10_22_Nueva%20York/banner.jpg{% endblock %}
+{% block meta-url %}http://choosetravel.es/travels/{% endblock %}
+
 {% block content %}
 
 <p class="display-4">Mis viajes</p> <hr>

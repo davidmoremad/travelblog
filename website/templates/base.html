@@ -1,14 +1,23 @@
 {% load staticfiles %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-  <title>ChooseLife @ DavidAmrani</title>
+  <title>ChooseTravel: {% block meta-title %}{% endblock %} </title>
+  <meta name="description" content="{% block meta-description %}{% endblock %} ">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="David Amrani Hernandez" />
+  <meta name="keywords" content="travel, viajes, deporte, vuelo, precio, pais, ciudad" />
+  <meta property="og:image" content="{% block meta-image %}{% endblock %}">
+  <meta property="og:url" content="{% block meta-url %}{% endblock %}">
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="robots" content="follow" />
+
   <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/x-icon" />
-
 
   <!-- Bootstrap JS <--></-->
   <script src="{% static 'js/jquery.min.js' %}"></script>
@@ -38,7 +47,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="container">
-      <a class="navbar-brand" href="{% url 'website:home' %}"><i class="fa fa-map-marker fa-lg text-warning"></i> Choose<span class="text-warning">Life</span> </a>
+      <a class="navbar-brand" href="{% url 'website:home' %}"><i class="fa fa-map-marker fa-lg text-warning"></i> Choose<span class="text-warning">Travel</span> </a>
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
