@@ -5,7 +5,7 @@
 {% load customtags %}
 
 {% block meta-title %}Mi viaje a {{travel.title}} {% endblock %}
-{% block meta-description %} {{travel.text|striptags|truncatechars:120|safe}} {% endblock %}
+{% block meta-description %} {{travel.description}} {% endblock %}
 {% block meta-image %}http://www.choosetravel.es/static/img/travel/{{travel.date|date:"Y_m_d"}}_{{travel.title}}/banner.jpg{% endblock %}
 {% block meta-url %}http://choosetravel.es/travel/{{travel.id}}{% endblock %}
 

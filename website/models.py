@@ -23,6 +23,7 @@ class Profile(models.Model):
 
 class Travel(models.Model):
     title = models.CharField(max_length=200)
+    description = models.CharField(max_length=200)
     text = RichTextField()
     date =  models.DateTimeField()
     country = CountryField(blank_label='(select country)')
