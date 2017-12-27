@@ -1,0 +1,95 @@
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load customtags %}
+
+
+{% block meta-title %}Descubre los rincones más bellos de España y Europa{% endblock %}
+{% block meta-description %}Encuentra los rincones más bonitos de España a través de nuestras experiencias y descubre otros muchos viajes por el mundo.{% endblock %}
+{% block meta-image %}http://www.choosetravel.es/static/img/travel/2016_10_22_Nueva%20York/banner.jpg{% endblock %}
+{% block meta-url %}http://choosetravel.es/{% endblock %}
+
+{% block content %}
+
+<p class="display-4">¿Quienes somos?</p>
+<hr>
+<div class="mb-5">
+  <p class="m-5 font-italic text-center h4">
+    “Un viaje se mide mejor en amigos que en millas” – <span class="text-muted">Tim Cahill</span>
+  </p>
+  <p>
+    En nuestras experiencias hemos aprendido que viajar, como convivir, es algo muy íntimo y no cualquier persona vale para ello.
+    Cada uno viajamos por distintas razones y con distintos objetivos, por lo que saber convivir y ser amable no es suficiente a
+    a la hora de elegir un compañero de viaje, es necesario tener unos puntos en común para poder satisfacer los deseos de todos.
+  </p>
+  <p>
+    Los que aquí aparecemos somos ya amigos y compañeros de viaje con bastante antigüedad, por ello que la mayoria de viajes los
+    hayamos realizado juntos, como podréis ver en muchas de las fotos. Sin más, os dejo las fichas.
+  </p>
+</div>
+
+
+<div class="row">
+
+  <div class="col-md-4 mb-4">
+    <div class="card" style="width: 20rem;">
+      <img class="card-img-top" style="height:200px;background-image: url('{% static 'img/contact/david.amrani.jpg' %}');background-size: cover;">
+      <div class="card-block">
+        <h4 class="card-title">David Amrani H.</h4>
+        <p class="card-text font-italic">“Viajar es un ejercicio con fatales consecuencias para los prejuicios, la intolerancia y la mente estrecha"</p>
+      </div>
+      <div class="card-footer pb-2 pt-2">
+        <p class="text-muted m-0 d-flex justify-content-between">
+          <small class="pt-1">Developer & Collaborator</small>
+          <span>
+            <a href="https://www.instagram.com/davidmoremad/" target="_blank" class="text-muted"><i class="fa fa-instagram fa-lg mr-2"></i></a>
+            <a href="https://www.linkedin.com/in/davidah/" target="_blank" class="text-muted"><i class="fa fa-linkedin fa-lg mr-2"></i></a>
+            <a href="https://github.com/davidmoremad" target="_blank" class="text-muted"><i class="fa fa-github fa-lg mr-2"></i></a>
+            <a href="https://twitter.com/davidmoremad" target="_blank" class="text-muted"><i class="fa fa-twitter fa-lg"></i></a>
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 mb-4">
+    <div class="card" style="width: 20rem;">
+      <img class="card-img-top" style="height:200px;background-image: url('{% static 'img/contact/javier.torre.jpg' %}');background-size: cover;">
+      <div class="card-block">
+        <h4 class="card-title">Javier de la Torre C.</h4>
+        <p class="card-text font-italic">“Viajar sirve para ajustar la imaginación a la realidad, y para ver las cosas como son en vez de pensar cómo serán”</p>
+      </div>
+      <div class="card-footer pb-2 pt-2">
+        <p class="text-muted m-0 d-flex justify-content-between">
+          <small class="pt-1">Collaborator</small>
+          <span>
+            <a href="https://instagram.com/javitc7" target="_blank" class="text-muted"><i class="fa fa-instagram fa-lg mr-2"></i></a>
+            <a href="https://www.linkedin.com/in/javierdelatorrecriado/" target="_blank" class="text-muted"><i class="fa fa-linkedin fa-lg mr-2"></i></a>
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-4 mb-4">
+    <div class="card" style="width: 20rem;">
+      <img class="card-img-top" style="height:200px;background-image: url('{% static 'img/contact/nacho.lazaro.jpg' %}');background-size: cover;">
+      <div class="card-block">
+        <h4 class="card-title">Nacho Lázaro C.</h4>
+        <p class="card-text font-italic">“El deambular re-establece la armonía original que alguna vez existió entre el hombre y el Universo”</p>
+      </div>
+      <div class="card-footer pb-2 pt-2">
+        <p class="text-muted m-0 d-flex justify-content-between">
+          <small class="pt-1">Collaborator</small>
+          <span>
+            <a href="https://www.instagram.com/nachz10lc/" target="_blank" class="text-muted"><i class="fa fa-instagram fa-lg mr-2"></i></a>
+            <a href="https://www.linkedin.com/in/ignacio-l%C3%A1zaro-carrasco-763a6613b/" target="_blank" class="text-muted"><i class="fa fa-linkedin fa-lg mr-2"></i></a>
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+  {% endblock%}

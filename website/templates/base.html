@@ -42,33 +42,38 @@
 
 <body>
 
-  <nav class="navbar sticky-top navbar-toggleable-md navbar-inverse bg-inverse mb-4">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <div class="bg-inverse">
     <div class="container">
-      <a class="navbar-brand" href="{% url 'website:home' %}"><i class="fa fa-map-marker fa-lg text-warning"></i> Choose<span class="text-warning">Travel</span> </a>
+      <nav class="navbar navbar-toggleable-md sticky-top navbar-inverse mb-4">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="{% url 'website:home' %}"><i class="fa fa-map-marker fa-lg text-warning"></i> Choose<span class="text-warning">Travel</span> </a>
 
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item  {% if '/' == request.path %}active{% endif %}">
-            <a class="nav-link" href="{% url 'website:home' %}"> Home</a>
-          </li>
-          <li class="nav-item  {% if '/travels/' == request.path %}active{% endif %}">
-            <a class="nav-link" href="{% url 'website:travels' %}"> Viajes</a>
-          </li>
-        </ul>
-      </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item  {% if '/' == request.path %}active{% endif %}">
+              <a class="nav-link" href="{% url 'website:home' %}"> Home</a>
+            </li>
+            <li class="nav-item  {% if '/travels/' == request.path %}active{% endif %}">
+              <a class="nav-link" href="{% url 'website:travels' %}"> Viajes</a>
+            </li>
+            <li class="nav-item  {% if '/contact/' == request.path %}active{% endif %}">
+              <a class="nav-link" href="{% url 'website:contact' %}"> Contacto</a>
+            </li>
+          </ul>
+        </div>
 
-      <div class="col-2 hidden-md-down">
-        <a class="navbar-brand float-right" target="_blank" href="https://github.com/davidmoremad/"><i class="fa fa-github"></i></a>
-        <a class="navbar-brand float-right" target="_blank" href="https://www.linkedin.com/in/davidah/"><i class="fa fa-linkedin"></i></a>
-        <a class="navbar-brand float-right" target="_blank" href="https://www.instagram.com/davidmoremad"><i class="fa fa-instagram"></i></a>
-        <a class="navbar-brand float-right" target="_blank" href="https://www.twitter.com/davidmoremad/"><i class="fa fa-twitter"></i></a>
-      </div>
+        <div class="col-2 hidden-md-down">
+          <a class="navbar-brand float-right" target="_blank" href="https://github.com/davidmoremad/"><i class="fa fa-github"></i></a>
+          <a class="navbar-brand float-right" target="_blank" href="https://www.linkedin.com/in/davidah/"><i class="fa fa-linkedin"></i></a>
+          <a class="navbar-brand float-right" target="_blank" href="https://www.instagram.com/davidmoremad"><i class="fa fa-instagram"></i></a>
+          <a class="navbar-brand float-right" target="_blank" href="https://www.twitter.com/davidmoremad/"><i class="fa fa-twitter"></i></a>
+        </div>
 
+      </nav>
     </div>
-  </nav>
+  </div>
 
   <div class="container">
     {% block content %}

@@ -21,3 +21,6 @@ def travel_detail(request, pk):
     if static_storage.exists(img_dir):
         travel.images.extend([img_dir + x for x in static_storage.listdir(img_dir)[1]])
     return render(request, 'travel/detail.html', {'travel':travel})
+
+def contact(request):
+    return render(request, 'contact.html')
