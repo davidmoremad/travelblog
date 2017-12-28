@@ -42,9 +42,9 @@
     <!-- CAROUSEL OF PICTURES -->
     <div id="recipeCarousel" class="carousel slide w-100 " data-ride="carousel">
       <div class="carousel-inner" role="listbox">
-        {%for image in travel.images%}
-          <a href="{%static image%}" data-lightbox="roadtrip" data-title="{{travel.title}}" class="carousel-item {%if forloop.counter0 == 0 %}active{%endif%}">
-              <span class="col-md-3 m-1" style="height:200px;background-image: url('{%static image%}');background-size: cover;border:none"></span></a>
+        {% for photo in travel.gallery.all %}
+          <a href="{%static photo.image.url%}" data-lightbox="roadtrip" data-title="{{travel.title}}" class="carousel-item {%if forloop.counter0 == 0 %}active{%endif%}">
+              <span class="col-md-3 m-1" style="height:200px;background-image: url('{%static photo.image.url%}');background-size: cover;border:none"></span></a>
         {%endfor%}
       </div>
       <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">

@@ -22,7 +22,7 @@
   {% for travel in travels %}
   <div class="col-md-4 mb-3">
     <div class="card w-100"  style="width: 300px;">
-      <img class="card-img-top" style="height:200px;background-image: url('{% static 'img/travel/' %}{{travel.date|date:'Y_m_d'}}_{{travel.title}}/banner.jpg');background-size: cover;">
+      <img class="card-img-top" style="height:200px;background-image: url('{%for photo in travel.gallery.all%}{% if photo.banner %}{% static photo.image.url %}{% endif %}{%endfor%}');background-size: cover;">
       <div class="card-block">
         <h4 class="card-title"><a href="{% url 'website:travel_detail' pk=travel.pk %}">{{travel.title}}</a></h4>
         <p class="card-text">{{travel.description}}</p>
