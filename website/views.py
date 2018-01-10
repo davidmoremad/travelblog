@@ -5,7 +5,7 @@ from django.core.files.storage import get_storage_class
 from django.conf import settings
 
 def home(request):
-    travels = Travel.objects.all()
+    travels = Travel.objects.all().order_by('-score')
     return render(request, 'index.html', {'travels':travels})
 
 def travel_list(request):
